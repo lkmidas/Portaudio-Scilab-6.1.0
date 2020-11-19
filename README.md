@@ -3,4 +3,4 @@ The official Portaudio Toolbox v0.2 is only for Scilab 5.4.0 and is not compatib
 ## Build
 Run `builder.sce` with Scilab.
 ## Installation
-Zip the built folder and install it normally using `atomInstall("/path/to/zipfile")`.
+Zip the built folder and install it normally using `atomsInstall("/path/to/zipfile")`.
