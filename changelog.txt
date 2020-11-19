@@ -1,0 +1,14 @@
+changelog of the portaudio toolbox
+
+portaudio toolbox (0.2)
+    * pa_recordwav fixed
+    * ATOMS 5.4 compatibility
+    * update portaudio library on Windows (v19 20111121 - stable)
+    * update to use api_scilab
+
+
+portaudio toolbox (0.1)
+    * first version 
+    
+ -- Author <allan.cornet@gmail.com>  05/02/2012
+

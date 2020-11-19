@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ *
+ * Copyright (C) Allan CORNET - 2012
+ *
+ -->
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns3="http://www.w3.org/1999/xhtml" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:db="http://docbook.org/ns/docbook" version="5.0-subset Scilab" xml:id="pa_recordwav" xml:lang="en">
+  <info>
+    <pubdate>$LastChangedDate: 2008-03-26 09:50:39 +0100 (mer., 26 mars 2008)
+    $</pubdate>
+  </info>
+  <refnamediv>
+    <refname>pa_recordwav</refname>
+    <refpurpose>Record sound using PC-based audio input device</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+    <synopsis>y = pa_recordwav(n)
+y = pa_recordwav(n, Fs)
+y = pa_recordwav(n, Fs, ch)
+y = pa_recordwav(n, Fs, ch, deviceID)
+      </synopsis>
+  </refsynopsisdiv>
+  <refsection>
+    <title>Arguments</title>
+    <variablelist>
+      <varlistentry>
+        <term>n</term>
+        <listitem>
+          <para>number of samples</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fs</term>
+        <listitem>
+          <para>rate samples per second (Hz).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>ch</term>
+        <listitem>
+          <para>number of input channels from audio device.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>deviceID</term>
+        <listitem>
+          <para>ID of input audio device to use</para>
+        </listitem>
+      </varlistentry>
+      
+    </variablelist>
+  </refsection>
+  <refsection>
+    <title>Description</title>
+    <para>y = pa_recordwav(n,Fs) records n samples of an audio signal, sampled at a rate of Fs Hz (samples per second).</para>
+  </refsection>
+  <refsection>
+    <title>Examples</title>
+    <programlisting role="example">y = pa_recordwav(1000);
+plot(y);
+pa_playwav(y)</programlisting>
+  </refsection>
+  <refsection role="see also">
+    <title>See Also</title>
+    <simplelist type="inline">
+      <member>
+        <link linkend="pa_playwav">pa_playwav</link>
+      </member>
+    </simplelist>
+  </refsection>
+  <refsection>
+    <title>Author</title>
+    <simplelist type="vert">
+      <member>Allan CORNET</member>
+    </simplelist>
+  </refsection>
+</refentry>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ *
+ * Copyright (C) Allan CORNET - 2012
+ * 
+ -->
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns3="http://www.w3.org/1999/xhtml" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:db="http://docbook.org/ns/docbook" version="5.0-subset Scilab" xml:id="pa_deviceinfo" xml:lang="en">
+  <info>
+    <pubdate>$LastChangedDate: 2008-03-26 09:50:39 +0100 (mer., 26 mars 2008)
+    $</pubdate>
+  </info>
+  <refnamediv>
+    <refname>pa_deviceinfo()</refname>
+    <refpurpose>Information about audio device</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+    <synopsis>device_names = pa_deviceinfo()
+[device_names, default_samplerate] = pa_deviceinfo()      
+[device_names, default_samplerate, nbChannels] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput, inputLatency] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput, lowInputLatency, lowOutputLatency] = pa_deviceinfo()
+[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput, lowInputLatency, lowOutputLatency, highInputLatency, highOutputLatency] = pa_deviceinfo()
+</synopsis>
+  </refsynopsisdiv>
+  <refsection>
+    <title>Description</title>
+    <para>Information about audio device.</para>
+  </refsection>
+  <refsection>
+    <title>Examples</title>
+    <programlisting role="example">[device_names, default_samplerate, nbChannelsInput, nbChannelsOutput, lowInputLatency, lowOutputLatency, highInputLatency, highOutputLatency] = pa_deviceinfo()</programlisting>
+  </refsection>
+  <refsection role="see also">
+    <title>See Also</title>
+    <simplelist type="inline">
+      <member>
+        <link linkend="pa_printdeviceinfo">pa_printdeviceinfo</link>
+      </member>
+    </simplelist>
+  </refsection>
+  <refsection>
+    <title>Author</title>
+    <simplelist type="vert">
+      <member>Allan CORNET</member>
+    </simplelist>
+  </refsection>
+</refentry>

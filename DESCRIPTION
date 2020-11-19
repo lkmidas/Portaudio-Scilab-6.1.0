@@ -1,0 +1,50 @@
+Toolbox: portaudio
+
+Title: portaudio - play and record audio from your sound card
+
+Summary: portaudio - play and record audio from your sound card
+
+Version: 0.2
+
+Author: allan.cornet@scilab.org
+ allan.cornet.scilab@gmail.com
+
+Maintainer: Simon Gareste <simon.gareste@scilab-enterprises.com>
+
+Category: Instruments Control
+
+Entity: non commercial
+
+WebSite: 
+
+URL: http://atoms.scilab.org/toolboxes/portaudio/0.2
+
+License: GPL
+
+ScilabVersion: >= 5.4
+
+Depends: 
+
+Date: 2012-02-24 15:48:00
+
+Description: portaudio - play and record audio from your sound card 
+ 
+ pa_defaultinputdeviceid — Get current default input device ID
+ pa_defaultoutputdeviceid — Get current default output device ID
+ pa_deviceinfo — Information about audio device
+ pa_getdevicecount — 
+ pa_gettlbxpath — 
+ pa_getversion — get version of used Portaudio library
+ pa_getversiontext — get version of used Portaudio library as text
+ pa_playwav — Playing audio
+ pa_printdeviceinfo — 
+ pa_recordwav — Record sound using PC-based audio input device
+ 
+ version 0.2 - beta
+ 
+     * pa_recordwav fixed
+     * ATOMS 5.4 compatibility
+     * update portaudio library on Windows (v19 20111121 - stable)
+     * update to use api_scilab
+ 
+

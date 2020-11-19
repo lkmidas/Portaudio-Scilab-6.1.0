@@ -1,0 +1,67 @@
+// =============================================================================
+// Copyright (C) 2010-2012 - Allan CORNET
+// =============================================================================
+function portaudio_toolboxlib = startModule()
+  mprintf("\nStart portaudio Toolbox\n");
+// =============================================================================
+  if isdef("portaudio_toolboxlib") then
+    warning("portaudio Toolbox library is already loaded.");
+    return;
+  end
+// =============================================================================
+  etc_tlbx  = get_absolute_file_path("portaudio_toolbox.start");
+  etc_tlbx  = getshortpathname(etc_tlbx);
+  root_tlbx = strncpy( etc_tlbx, length(etc_tlbx)-length("\etc\") );
+// =============================================================================
+  verbose_mode = ilib_verbose();
+  ilib_verbose(0);
+  if getos() == 'Windows' then
+    if win64() then
+      link(root_tlbx + '/thirdparty/portaudio/lib/windows/x64/portaudio_x64' + ..
+                       getdynlibext());
+    else
+      link(root_tlbx + '/thirdparty/portaudio/lib/windows/x86/portaudio_x86' + ..
+                       getdynlibext());  
+    end
+  else
+    link(root_tlbx + '/thirdparty/portaudio/lib/others/libportaudio' + ..
+                   getdynlibext());  
+  end
+  ilib_verbose(verbose_mode);
+// =============================================================================
+//Load  functions library
+// =============================================================================
+  mprintf("\tLoad macros\n");
+  pathmacros = pathconvert( root_tlbx ) + "macros" + filesep();
+  portaudio_toolboxlib = lib(pathmacros);
+// =============================================================================
+// load gateways
+// =============================================================================
+  mprintf("\tLoad gateways\n");
+  verbose_mode = ilib_verbose();
+  ilib_verbose(0);
+  exec(pathconvert(root_tlbx+"/sci_gateway/loader_gateway.sce",%f));
+  ilib_verbose(verbose_mode);
+// =============================================================================
+// Load and add help chapter
+// =============================================================================
+  if or(getscilabmode() == ["NW";"STD"]) then
+    mprintf("\tLoad help\n");
+    path_addchapter = pathconvert(root_tlbx+"/jar");
+    if ( isdir(path_addchapter) <> [] ) then
+      add_help_chapter("Portaudio Toolbox", path_addchapter, %F);
+    end
+  end
+// =============================================================================
+// Load demos
+// =============================================================================
+  if or(getscilabmode() == ["NW";"STD"]) then
+    mprintf("\tLoad demos\n");
+    pathdemos = pathconvert(root_tlbx+"/demos/portaudio_toolbox.dem.gateway.sce",%F,%T);
+    add_demo("Portaudio Toolbox",pathdemos);
+  end
+// =============================================================================
+endfunction
+// =============================================================================
+portaudio_toolboxlib = startModule();
+clear startModule;
